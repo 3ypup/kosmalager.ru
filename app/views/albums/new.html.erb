@@ -1,11 +1,9 @@
-<div class="mx-auto" style="width: 1000px;">
-<t4> Создать новый альбом: </t4>
+<div class="mx-auto" style="width: 500px;">
+<p4> Создать новый альбом: </p4>
 <%= form_for :albums, url: albums_path do |f| %> 
 
-	
 
-
-	<t2> <%= f.label :Название_альбома %> </t2>
+	<t2> <%= f.label :Название_альбома %> </t2><br/>
 	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
 
 	<t2> <%= f.label :Описание_альбома %> </t2>
@@ -15,6 +13,6 @@
 	<t2><%= f.label :Обложка_альбома %></t2>
     <p1><%= f.file_field :image %></p1>
 
-	<p3> <%= f.submit 'Начать игру' %></p3>
+	<p3> <%= f.submit 'Создать альбом' %></p3>
  <%end%>
 </div>

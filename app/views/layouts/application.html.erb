@@ -81,7 +81,7 @@
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <div class="mx-auto" style="width: 0px;">
+          <div class="mx-auto" style="width: 100px;">
           <ul class="navbar-nav ml-auto ">
             <li class="nav-item">
               <a class="nav-link" href="/albums">Галерея</a>
@@ -95,6 +95,18 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Контакты</a>
             </li>
+
+            <% if user_signed_in? %>
+            <li class="nav-item">
+               <tw1> Привет, <%=current_user.username%>!  </tw1><br/>
+               <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %><br/><br/>
+            </li>
+
+            <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href=<%=new_user_session_path%>>Авторизоваться</a>
+            </li>
+            <%end%>
 
           </ul>
         </div>
@@ -118,7 +130,8 @@
       </div>
     </header>
 
-
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 
 
