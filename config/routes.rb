@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 
 get '/' => "posts#index"
 
+resources :posts
+resources :albums
+
 
 end

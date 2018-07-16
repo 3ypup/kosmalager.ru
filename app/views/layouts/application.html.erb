@@ -60,7 +60,10 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <!--<link href="/css/gallery.css" rel="stylesheet" type="text/css">-->
+
+
+
+  
     
 
 
@@ -78,9 +81,10 @@
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <div class="mx-auto" style="width: 0px;">
+          <ul class="navbar-nav ml-auto ">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Галерея</a>
+              <a class="nav-link" href="/albums">Галерея</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">Ближайшие события</a>
@@ -91,21 +95,23 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Контакты</a>
             </li>
+
           </ul>
+        </div>
         </div>
       </div>
     </nav>
 
 
      <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home.jpg')">
+    <header class="masthead" style="background-image: url('img/<%=@bckg%>')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Приходской подростковый клуб</h1>
-              <span class="subheading">Храма свв. бесср. Космы и Дамиана</span>
+              <h1><%=@title%></h1>
+              <span class="subheading"><%=@label%></span>
             </div>
           </div>
         </div>
