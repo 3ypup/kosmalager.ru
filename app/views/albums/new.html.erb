@@ -1,8 +1,8 @@
 <div class="mx-auto" style="width: 500px;">
 <p4> Создать новый альбом: </p4>
-<%= form_for :albums, url: albums_path do |f| %> 
+<%= form_for :album, url: albums_path do |f| %> 
 
-
+	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 	<t2> <%= f.label :Название_альбома %> </t2><br/>
 	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
 

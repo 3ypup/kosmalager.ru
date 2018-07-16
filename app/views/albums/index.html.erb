@@ -15,9 +15,12 @@
 
 <div class="container">
 
+
+<% @albums.reverse_each  do |album|%>
     <div class="row">
 
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg" />|<strong>Встреча</strong>|10.10.2018|автор фото|<br/><br/><br/></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=<%=album.image%> /><p2> <%=album.author%></p2></div>
+        
 
 
 
@@ -26,5 +29,5 @@
 
         </div>
   
-
+<%end%>
 </div>
