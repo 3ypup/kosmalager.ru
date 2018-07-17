@@ -1,7 +1,5 @@
 
- <script src="/js/lightgallery-all.min.js"></script>
-
-<link href="/css/lightgallery.css" rel="stylesheet">
+ 
 
 <!doctype html>
 <html>
@@ -32,10 +30,10 @@ google_ad_height = 90;
 			<div class="alert alert-primary" role="alert"    
 			  ><p2>Добавить фотографии</p2></a>
 
-			  <%= form_for :album, url: album_path, method: :put do |f| %>
+			  <%= form_for :album, url: albums_url do |f| %>
 
 			  <p3> <%= f.file_field :pics, multiple: true %></p3>
-			  <%= f.submit %>
+			  <%= f.submit "Сохранить"%>
  			<%end%>
 			</div>
 </div>
@@ -50,11 +48,12 @@ google_ad_height = 90;
         <div class="demo-gallery">
             <ul id="lightgallery" class="list-unstyled row">
             	<%@album.pics.each do |pic|%>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="<%=pic%>" data-src="<%=pic%>" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+            	
+                <li st class="col-xs-2 col-sm-2 col-md-3" data-responsive="<%=pic%>" data-src="<%=pic%>" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
                     <a href="">
                         <img class="img-responsive" src="<%=pic%>">
                     </a>
-                </li>
+
                 <%end%>
                 
             </ul>
