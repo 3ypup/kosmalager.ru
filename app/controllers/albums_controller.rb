@@ -74,7 +74,7 @@ end
 
 
 def album_params
-    params.require(:album).permit(:author, :content, :title, :image,  {pics: []})
+    params.require(:album).permit(:author, :content, :title, :image)
   end
 
 end

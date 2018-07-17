@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 get '/' => "posts#index"
 
 resources :posts
-resources :albums
+resources :albums do
+  resources :pics
+end
 
 
 end

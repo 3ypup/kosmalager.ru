@@ -22,17 +22,18 @@ google_ad_height = 90;
 </script>
 
 
+
 <%if user_signed_in?%>
 <div class="container">    
     <div class="row">
 
-        <div  class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive">
+        <div  class="col-md-2 col-sm-4 col-xs-6"><img class="img-responsive">
 			<div class="alert alert-primary" role="alert"    
-			  ><p2>Добавить фотографии</p2></a>
+			  ><p3>Добавить фотографии</p3></a>
 
-			  <%= form_for :album, url: albums_url do |f| %>
+			  <p2><%= form_for ([@album, @album.pics.build]) do |f| %></p2>
 
-			  <p3> <%= f.file_field :pics, multiple: true %></p3>
+			  <p3> <%= f.file_field :images, multiple: true %></p3>
 			  <%= f.submit "Сохранить"%>
  			<%end%>
 			</div>
@@ -43,17 +44,22 @@ google_ad_height = 90;
 
 
 
+
+
+
+
 </div>
 
         <div class="demo-gallery">
             <ul id="lightgallery" class="list-unstyled row">
             	<%@album.pics.each do |pic|%>
+            		<%pic.images.each do |p|%>
             	
-                <li st class="col-xs-2 col-sm-2 col-md-3" data-responsive="<%=pic%>" data-src="<%=pic%>" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+                <li st class="col-xs-2 col-sm-2 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
                     <a href="">
-                        <img class="img-responsive" src="<%=pic%>">
+                        <img class="img-responsive" src="<%=p%>">
                     </a>
-
+                    <%end%>
                 <%end%>
                 
             </ul>

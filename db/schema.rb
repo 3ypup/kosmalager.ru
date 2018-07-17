@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_112752) do
+ActiveRecord::Schema.define(version: 2018_07_17_105921) do
 
   create_table "albums", force: :cascade do |t|
     t.text "author"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 2018_07_16_112752) do
     t.string "pics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pics", force: :cascade do |t|
+    t.string "images"
+    t.integer "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_pics_on_album_id"
   end
 
   create_table "posts", force: :cascade do |t|
