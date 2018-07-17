@@ -22,14 +22,40 @@ google_ad_width = 728;
 google_ad_height = 90;
 //-->
 </script>
+
+
+<%if user_signed_in?%>
+<div class="container">    
+    <div class="row">
+
+        <div  class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive">
+			<div class="alert alert-primary" role="alert"    
+			  ><p2>Добавить фотографии</p2></a>
+
+			  <%= form_for :album, url: album_path, method: :put do |f| %>
+
+			  <p3> <%= f.file_field :pics, multiple: true %></p3>
+			  <%= f.submit %>
+ 			<%end%>
+			</div>
 </div>
+</div>
+</div>
+<%end%>
+
+
+
+</div>
+
         <div class="demo-gallery">
             <ul id="lightgallery" class="list-unstyled row">
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="/img/about-bg.jpg" data-src="/img/about-bg.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+            	<%@album.pics.each do |pic|%>
+                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="<%=pic%>" data-src="<%=pic%>" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
                     <a href="">
-                        <img class="img-responsive" src="/img/about-bg.jpg">
+                        <img class="img-responsive" src="<%=pic%>">
                     </a>
                 </li>
+                <%end%>
                 
             </ul>
         </div>

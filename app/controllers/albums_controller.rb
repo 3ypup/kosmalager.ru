@@ -51,6 +51,9 @@ def show
 
 end
 
+def edit
+
+end
 
 def destroy
   @album = Album.find(params[:id])
@@ -68,8 +71,25 @@ def destroy
 
 end
 
+  def edit
+      @album = Article.find(params[:id]) 
+  end
+
+
+def update
+
+  @album = Album.find(params[:id])
+     if  @album.update(album_params) 
+        redirect_to @album
+
+      else
+        render action: 'edit'
+      end
+
+end
+
 def album_params
-    params.require(:album).permit(:author, :content, :title, :image)
+    params.require(:album).permit(:author, :content, :title, :image,  {pics: []})
   end
 
 end

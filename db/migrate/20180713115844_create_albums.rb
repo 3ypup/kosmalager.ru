@@ -6,6 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[5.2]
       t.text :content
       t.text :title
       t.string :image
+      t.string :pics
 
 
       t.timestamps
