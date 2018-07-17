@@ -16,6 +16,9 @@ end
 
 
 def new
+
+
+
 @bckg = "/img/home.jpg"
 @title = "Галерея"
 @label = "Храма свв. бесср. Космы и Дамиана"
