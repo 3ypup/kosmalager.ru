@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
 def index
-  @bckg = "home.jpg"
+  @bckg = "/img/home.jpg"
   @title = "Приходской подростковый клуб"
   @label = "Храма свв. бесср. Космы и Дамиана"
 end

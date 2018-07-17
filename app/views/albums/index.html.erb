@@ -1,15 +1,21 @@
 <%if user_signed_in?%>
 <div class="container">    
     <div class="row">
-        <div class="col-sm">
-    </div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive">
-<div class="alert alert-primary" role="alert">    
-  <a href=<%=new_album_url%>><p2> Создать новый альбом</p2>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+    	</div>
+    	 <div class="col-md-3 col-sm-4 col-xs-6">
+    	</div>
+    	 <div class="col-md-3 col-sm-4 col-xs-6">
+    	</div>
+        <div  class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive">
+			<div class="alert alert-primary" role="alert">    
+			  <a href=<%=new_album_url%>><p2> Создать новый альбом</p2></a>
+			</div>
 </div>
 </div>
 </div>
-</div>
+
+
 <%end%>
 
 
@@ -19,8 +25,7 @@
 <% @albums.reverse_each  do |album|%>
     <div class="row">
 
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=<%=album.image%> /><p2> <%=album.author%></p2></div>
-        
+        <div> <a href = <%=album_url(album.id)%> class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src= <%=album.image%> /><p2> <%=album.author%></p2></a></div> 
 
 
 

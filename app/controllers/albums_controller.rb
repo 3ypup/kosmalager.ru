@@ -5,9 +5,9 @@ class AlbumsController < ApplicationController
 
 def index
 
-@bckg = "home.jpg"
+@bckg = "/img/home.jpg"
 @title = "Галерея"
-@label = "Храма свв. бесср. Космы и Дамиана"
+@label = "нашего клуба"
 
 
 @albums=Album.all
@@ -16,7 +16,7 @@ end
 
 
 def new
-@bckg = "home.jpg"
+@bckg = "/img/home.jpg"
 @title = "Галерея"
 @label = "Храма свв. бесср. Космы и Дамиана"
 
@@ -41,7 +41,7 @@ def create
 
 def show
 @album = Album.find(params[:id])
-@bckg = "home.jpg"
+@bckg = @album.image
 
 @title = @album.title
 
