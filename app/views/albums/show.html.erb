@@ -11,7 +11,7 @@
     <link href="/css/lightgallery.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Full-featured Image Viewer/Gallery Plugin Example</h1>
+        <h1>Фото</h1>
         <div class="jquery-script-ads" style="margin:30px auto"><script type="text/javascript"><!--
 google_ad_client = "ca-pub-2783044520727903";
 /* jQuery_demo */
@@ -24,15 +24,18 @@ google_ad_height = 90;
 
 
 	<%if user_signed_in?%>
-    	
+    	<div class="alert alert-primary" role="alert">
+
+
 			  <p3>Добавить фотографии</p3></a>
 
 			  <p2><%= form_for ([@album, @album.pics.build]) do |f| %></p2>
-
+			  <div class="alert alert-info" role="alert">
 			  <p3> <%= f.file_field :images, multiple: true %></p3>
+			</div>
 			  <%= f.submit "Сохранить"%>
  			<%end%>
-
+		</div>
 	<%end%>
 
 
@@ -48,7 +51,7 @@ google_ad_height = 90;
             	<%@album.pics.each do |pic|%>
             		<%pic.images.each do |p|%>
             	
-                <li st class="col-xs-2 col-sm-2 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
+                <li st class="col-xs-3 col-sm-3 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
                     <a href="">
                         <img class="img-responsive" src="<%=p%>">
                     </a>
@@ -68,6 +71,7 @@ google_ad_height = 90;
         </script>
         <script src="/js/lightgallery-all.min.js"></script>
     </body>
+
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
