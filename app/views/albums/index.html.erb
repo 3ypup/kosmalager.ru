@@ -11,7 +11,7 @@
 
         	<div class="clearfix">
             
-            <a class="btn btn-success float-left" href=<%=new_album_url%>>&larr; Создать новый альбом </a>
+            <a class="btn btn-success float-right" href=<%=new_album_url%>>&larr; Создать новый альбом </a>
         
          
           </div>
@@ -33,7 +33,7 @@
     <div class="row">
 
     	<% @albums.reverse_each  do |album|%>
-       <div  class="col-md-4 col-sm-4 col-xs-4" >
+       <div  class="col-md-4 col-sm-4 col-xs-6" >
        	<a href = <%=album_url(album.id)%>>
         <p2> <%=album.title%></p2>|
         <p2> <%=album.content%></p2>	
