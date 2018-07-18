@@ -86,32 +86,32 @@
 
             </li>
 
-        <li class="nav-item">
+       
               <a class="navbar-brand" href="/">Главная</a>
-            </li>
-            <li class="nav-item">
+          
+          
               <a class="navbar-brand" href="/albums">Галерея</a>
-            </li>
-            <li class="nav-item">
+           
+          
               <a class="navbar-brand" href="about.html">Ближайшие события</a>
-            </li>
-            <li class="nav-item">
+        
+           
               <a class="navbar-brand" href="post.html">Блог</a>
-            </li>
-            <li class="nav-item">
+         
+           
               <a class="navbar-brand" href="contact.html">Контакты</a>
-            </li>
+           
           <%if user_signed_in?%>
-             <li class="nav-item">
+          
               <a class="navbar-brand" href="contact.html"><%=current_user.username%></a>
-            </li>
+       
         
          <small ><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></small>
          <%else%>
 
-         <li class="nav-item">
+        
               <a class="navbar-brand" href=<%=new_user_session_path%>>Авторизоваться</a>
-            </li>
+           
 
          <%end%>
 
