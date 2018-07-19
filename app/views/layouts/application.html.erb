@@ -76,7 +76,7 @@
         <!--visible md-->
         <div class="hidden-xs col-sm-6 col-md-12" align="center">
           <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-          <div  class="container">
+        <div  class="container">
          <ul class="navbar-nav ml-auto ">
        </ul>
         <ul class="navbar-nav ml-auto ">
@@ -124,28 +124,16 @@
  
            
         </div>
-        <!--visible-sx-->
-        <div class="visible-xs col-md-3 col-sx-3 " align="center">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle float-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Перейти
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href=<%=posts_path%>><button type="button" class="btn btn-primary">Главная</button></a>
-        <a class="dropdown-item" href=<%=albums_path%>><button type="button" class="btn btn-primary">Галерея</button></a>
-        <a class="dropdown-item" href="#"><button type="button" class="btn btn-primary">Ближайшие события</button></a>
-
-        <a class="dropdown-item" href="#"><button type="button" class="btn btn-primary">Блог</button></a>
-        <a class="dropdown-item" href="#"><button type="button" class="btn btn-primary">Контакты</button></a>
-      </div>
-    </div>    
-        
-
-        </div>
-        
+       
         
     </div>
+
+
+    
 </div>
+
+
+
 
 
 
@@ -200,6 +188,38 @@
     <header class="masthead" style="background-image: url('<%=@bckg%>')">
       <div class="overlay"></div>
       <div class="container">
+          <!--visible-sx button navigation-->
+
+          <div class="row">
+            <div class="visible-xs col-md-3 col-sx-3 " >
+              <style>
+            
+            .dropdown-menu {background-color: transparent;}
+            </style>
+
+                <div class="dropdown">
+                  
+         
+
+
+                  <button class=" btn btn-outline-light dropdown-toggle float-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Перейти
+                   </button>
+
+
+                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href=<%=posts_path%>><button type="button" class="btn btn-outline-light">Главная</button></a>
+                    <a class="dropdown-item" href=<%=albums_path%>><button type="button" class="btn btn-outline-light">Галерея</button></a>
+                    <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Ближайшие события</button></a>
+
+                    <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Блог</button></a>
+                    <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Контакты</button></a>
+                  </div>
+            </div>    
+        
+
+        </div>
+   </div> 
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
@@ -208,8 +228,13 @@
             </div>
           </div>
         </div>
+
       </div>
     </header>
+
+
+
+
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
