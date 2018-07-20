@@ -109,10 +109,10 @@
                
               <%if user_signed_in?%>
               
-                  <a class="navbar-brand" href="contact.html"><%=current_user.username%></a>
+                  <a class="navbar-brand">Привет, <%=current_user.username%></a>
                  
                   
-                   <small ><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></small>
+                   <small ><%= link_to 'Выйти?', destroy_user_session_path, :method => :delete %></small>
                    <%else%>
 
             
@@ -144,23 +144,26 @@
 
 
      <!-- Page Header -->
+
     <header class="masthead" style="background-image: url('<%=@bckg%>')">
       <div class="overlay"></div>
       <div class="container">
           <!--visible-sx button navigation-->
 
           <div class="row">
-            <div class="visible-xs col-md-3 col-sx-3 " >
+            <div class="visible-xs col-md-3 col-sx-3" >
               <style>
             
             .dropdown-menu {background-color: transparent;}
             </style>
 
-                <div class="dropdown">
+  
                   
          
 
+ <div class="clearfix">
 
+  <div class="dropdown">
                   <button class=" btn btn-outline-light dropdown-toggle float-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Перейти
                    </button>
@@ -172,12 +175,54 @@
                     <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Ближайшие события</button></a>
 
                     <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Блог</button></a>
-                    <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Контакты</button></a>
-                  </div>
-            </div>    
-        
 
+                    <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Контакты</button></a>
+
+
+
+                  </div>
+               
         </div>
+
+       
+
+
+
+
+         
+          
+
+          <%if user_signed_in?%>
+            <div class="dropdown">
+             <button class=" btn btn-outline-light dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%=current_user.username%>
+                   </button>
+
+
+                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" ><button type="button" class="btn btn-outline-light float-right"><%= link_to 'Выйти?', destroy_user_session_path, :method => :delete %></button></a>
+              </div>
+              </div>
+
+            <%else%>
+
+
+            <a class="btn btn-outline-light float-right" href=<%=new_user_session_path%>>Авторизоваться</a>
+
+
+            <%end%>
+
+            
+            </div>
+         </div>  
+
+  </div>
+</div>  
+
+
+
+
+
    </div> 
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
