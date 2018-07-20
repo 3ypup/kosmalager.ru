@@ -7,7 +7,7 @@ def index
   @posts = Post.all
 
   @bckg = "/img/home.jpg"
-  @title = "Приходской подростковый клуб"
+  @title = "Блог клуба"
   @label = "Храма свв. бесср. Космы и Дамиана"
 end
 

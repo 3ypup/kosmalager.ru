@@ -58,11 +58,17 @@
 
 
     <link href="/css/lightgallery.css" rel="stylesheet">
+   
+
+    <!--tabs-->
+   <link href="/css/tabs.css" rel="stylesheet">
+  
+
   </head>
-  <body>
+  
 
 
-
+ 
 
 
 <!-- Navigation -->
@@ -100,85 +106,38 @@
          
            
               <a class="navbar-brand" href="contact.html">Контакты</a>
-           
-          <%if user_signed_in?%>
-          
-              <a class="navbar-brand" href="contact.html"><%=current_user.username%></a>
-       
-        
-         <small ><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></small>
-         <%else%>
+               
+              <%if user_signed_in?%>
+              
+                  <a class="navbar-brand" href="contact.html"><%=current_user.username%></a>
+                 
+                  
+                   <small ><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></small>
+                   <%else%>
 
-        
-              <a class="navbar-brand" href=<%=new_user_session_path%>>Авторизоваться</a>
-           
+            
+                  <a class="navbar-brand" href=<%=new_user_session_path%>>Авторизоваться</a>
+               
 
-         <%end%>
+                  <%end%>
 
             
 
-          </ul>
-</ul>
-</div>
-</nav>
+                </ul>
+              </ul>
+              </div>
+              </nav>
  
            
-        </div>
+               </div>
        
         
-    </div>
+             </div>
 
 
     
-</div>
+          </div>
 
-
-
-
-
-
-
-
-        <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
-          Меню
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="mx-auto" style="width: 150px;">
-
-        <div class="collapse navbar-collapse" id="navbarResponsive" >
-          
-          <ul class="navbar-nav ml-auto ">
-
-            <li class="nav-item">
-              <a class="nav-link" href="/">Главная</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/albums">Галерея</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Ближайшие события</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="post.html">Блог</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Контакты</a>
-            </li>
-
-            <% if user_signed_in? %>
-            <li class="nav-item">
-               <tw1> Привет, <%=current_user.username%>!  </tw1><br/>
-               <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %><br/><br/>
-            </li>
-
-            <% else %>
-            <li class="nav-item">
-              <a class="nav-link" href=<%=new_user_session_path%>>Авторизоваться</a>
-            </li>
-            <%end%>
-
-          </ul>
-        </div>-->
         </div>
       </div>
     </nav>
@@ -208,7 +167,7 @@
 
 
                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href=<%=posts_path%>><button type="button" class="btn btn-outline-light">Главная</button></a>
+                    <a class="dropdown-item" href=<%=main_index_path%>><button type="button" class="btn btn-outline-light">Главная</button></a>
                     <a class="dropdown-item" href=<%=albums_path%>><button type="button" class="btn btn-outline-light">Галерея</button></a>
                     <a class="dropdown-item" href="#"><button type="button" class="btn btn-outline-light">Ближайшие события</button></a>
 
@@ -290,4 +249,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="/js/clean-blog.js"></script>
-        <script src="/js/lightgallery-all.min.js"></script>
+    <script src="/js/lightgallery-all.min.js"></script>
+    <!--tabs-->
+    <script src="/js/tabs.js"></script>

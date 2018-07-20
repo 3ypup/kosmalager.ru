@@ -1,41 +1,104 @@
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 mx-auto">
+            <div class="tabs">
+                
+                <ul>
+                    <li>Последние посты</li>
+                    <li>Последние фото</li>
+                    <li>Ближайшие мероприятия</li>
+                </ul>
+                <div>
+                  <!-- Вкладка посты -->
+                    <div>
+                      <%@posts.reverse_each  do |post|%>
+                      <div class="post-preview">
 
+                        <a href=<%=post_url(post)%>>
+
+                          <h2 class="post-title">
+                            <%=post.title%>
+                          </h2>
+                          <h3 class="post-subtitle">
+                            <%=post.content%>
+                          </h3>
+                        </a>
+                        <p class="post-meta">Написал
+                          <a href="#"><%=post.author%></a>
+                          <%=post.created_at%></p>
+                      </div>
+                      <hr>
+                      <%end%>
+                   
+                      <div class="clearfix">
+                      <%if user_signed_in?%>
+                      <a class="btn btn-success float-left" href=<%=new_post_url%>>&larr; Новый пост </a>
+                      <%end%>
+                      <a class="btn btn-primary float-right" href=<%=posts_url%>>Все посты &rarr;</a>
+                    </div>
+
+                    </div>
+                     <!-- Вкладка фотографии -->
+                    <div>
+                        <div class="gallery">
+                        <ul id="lightgallery" class="list-unstyled row">
+                          <%@album.each do |pic|%>
+                            <%pic.images.each do |p|%>
+                          
+                            <li st class="col-xs-3 col-sm-3 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
+                                <a href=<%=album_url(
+                                   pic.album.id)%>>
+                                    <img class="img-responsive" src="<%=p%>">
+                                </a>
+                                <%end%>
+                            <%end%>
+                            
+                        </ul>
+                    </div>
+
+                      <div class="clearfix">
+                      <%if user_signed_in?%>
+                      <a class="btn btn-success float-left" href=<%=new_album_url%>>&larr; Новый альбом </a>
+                      <%end%>
+                      <a class="btn btn-primary float-right" href=<%=albums_url%>>Все альбомы &rarr;</a>
+                    </div>
+
+
+
+
+
+
+                    </div>
+                    <div>Третье содержимое</div>
+                </div>            
+            </div> 
+</div>
+</div>
+</div>
 
 
 
 <!-- Main Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <%@posts.reverse_each  do |post|%>
-          <div class="post-preview">
 
-            <a href=<%=post_url(post)%>>
 
-              <h2 class="post-title">
-                <%=post.title%>
-              </h2>
-              <h3 class="post-subtitle">
-                <%=post.content%>
-              </h3>
-            </a>
-            <p class="post-meta">Написал
-              <a href="#"><%=post.author%></a>
-              <%=post.created_at%></p>
-          </div>
-          <hr>
-          <%end%>
+
+
+
+
+
+    
                  
           <!-- Pager -->
-          <div class="clearfix">
-            <%if user_signed_in?%>
-            <a class="btn btn-success float-left" href=<%=new_post_url%>>&larr; Новый пост </a>
-            <%end%>
-            <a class="btn btn-primary float-right" href="#">Все посты &rarr;</a>
-          </div>
+
         </div>
       </div>
     </div>
 
-    <hr>
+    <hr/>
 
-    
+
+<script>
+    $(document).ready(function(){
+  $(".tabs").lightTabs();
+});
+</script>
