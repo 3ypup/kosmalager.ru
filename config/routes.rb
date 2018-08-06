@@ -11,6 +11,6 @@ resources :posts
 resources :albums do
   resources :pics
 end
-
+resources :events
 
 end

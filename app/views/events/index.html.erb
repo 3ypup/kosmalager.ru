@@ -1,0 +1,39 @@
+
+
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <%@events.each do |event|%>
+          <div class="event-preview">
+
+            <a href=<%=event_url(event)%>>
+
+              <h2 class="event-title">
+                <%=event.title%>
+              </h2>
+              <h3 class="event-subtitle">
+                <%=event.content%>
+              </h3>
+            </a>
+            <p class="event-meta">Написал
+              <a href="#"><%=event.author%></a>
+              <%=event.created_at%></p>
+          </div>
+          <hr>
+          <%end%>
+                 
+          <!-- Pager -->
+          <div class="clearfix">
+            <%if user_signed_in?%>
+            <a class="btn btn-success" href=<%=new_event_url%>> Новое событие </a>
+            <%end%>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    

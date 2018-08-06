@@ -1,0 +1,28 @@
+<div id="event">
+	<div class="mx-auto" style="width: 500px;">
+		<div class="alert alert-info" role="alert">
+<t4> Создать событие: </t4>
+
+<%= form_for :event, url: events_path do |f| %> 
+
+	
+	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
+
+	<t2> <%= f.label :Название_события %> </t2><br/>
+	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
+
+	<t2> <%= f.label :Дата_и_время_события %> </t2><br/>
+	<p1> <%= f.text_area  :date, size: "40x1"  %> </p1><br/>
+
+	<t2> <%= f.label :Описание_события %> </t2>
+	<p1> <%= f.text_area  :content, size: "70x10" %> </p1><br/>
+
+
+	<t2><%= f.label :Обложка_события %></t2>
+    <p1><%= f.file_field :image %></p1>
+
+	<button class="btn btn-primary" type="submit">Создать</button>
+ <%end%>
+</div>
+</div>
+</div>
