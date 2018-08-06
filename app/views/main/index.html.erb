@@ -1,6 +1,7 @@
+
 <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-12 mx-auto">
+        <div class="col-lg-8 col-md-12 col-xs-12  col-sm-12 mx-auto">
             <div class="tabs">
                 
                 <ul>
@@ -8,6 +9,8 @@
                     <li>Последние фото</li>
                     <li>Ближайшие мероприятия</li>
                 </ul>
+
+
                 <div>
                   <!-- Вкладка посты -->
                     <div>
@@ -69,7 +72,37 @@
 
 
                     </div>
-                    <div>Третье содержимое</div>
+
+                    <!-- Вкладка события -->
+                     <div>
+                      <%@events.reverse_each  do |event|%>
+
+
+
+                        <a href=<%=event_url(event)%>>
+                      <h2 class="post-title">
+                            <%=event.date%>
+                          </h2>
+                        <img class="img-responsive" style="width: 200px" src= <%=event.image%> />
+                        <div class="post-preview">                          
+
+                          <h2 class="post-title">
+                            <%=event.title%>
+                          </h2>
+                          <h3 class="post-subtitle">
+                            <%=event.content%>
+                          </h3>
+                        </a>
+                        <p class="post-meta">Написал
+                          <a href="#"><%=event.author%></a>
+                          <%=event.created_at%></p>
+                      </div>
+                      <hr>
+                      <%end%>
+                   
+
+
+                    </div>
                 </div>            
             </div> 
 </div>
