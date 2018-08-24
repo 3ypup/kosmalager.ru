@@ -80,10 +80,11 @@
 
 
                         <a href=<%=event_url(event)%>>
-                      <h2 class="post-title">
-                            <%=event.date.strftime("%d %b %Yг.")%>
-                          </h2>
-                        <img class="img-responsive" style="width: 200px" src= <%=event.image%> />
+                       <h2 class="event-title">
+            
+                         <%=event.date. strftime("%d")%>-го <%=$rusdate[event.date.strftime("%m").to_i]%> <%=event.date. strftime("%Y")%> г.</
+                         </h2>
+                     
                         <div class="post-preview">                          
 
                           <h2 class="post-title">
@@ -96,10 +97,19 @@
                         <p class="post-meta">Написал
                           <a href="#"><%=event.author%></a>
                           <%=event.created_at%></p>
+
+
                       </div>
+
+
+
+
                       <hr>
                       <%end%>
-                   
+                                         <div class="clearfix">
+                      
+                      <a class="btn btn-primary float-right" href=<%=events_url%>>Все события &rarr;</a>
+                    </div>
 
 
                     </div>

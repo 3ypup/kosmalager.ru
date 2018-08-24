@@ -3,8 +3,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-md-12 mx-auto">
-            <p><%=@event.date.strftime("%d %b %Yг.")%></p>
+            <p><%@m=@event.date.strftime("%m").to_i%></p>
+           <h2 class="event-title">
+            
+            <%=@event.date. strftime("%d")%>-го <%=$rusdate[@event.date.strftime("%m").to_i]%> <%=@event.date. strftime("%Y")%> г.</
+              </h2>
             <p><%=@event.content%></p>
+           
           </div>
         </div>
       </div>

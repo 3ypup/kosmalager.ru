@@ -1,17 +1,12 @@
 class EventsController < ApplicationController
 
-def rusdate
 
-  @rusdate = %w[января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря ]
-
-
-
-end
+$rusdate = %w[0 января февраля марта апреля мая июня июля августа сентября октября ноября декабря ]
 
 
 def index
   @events = Event.order(:date)
-  
+
 
 
    
@@ -52,6 +47,11 @@ end
     @label =""
 
   end
+
+def public
+      @rusdate = %w[0 января февраля марта апреля мая июня июля августа сентября октября ноября декабря ]
+
+end
 
 def event_params
     params.require(:event).permit(:author, :content, :title, :image, :date)
