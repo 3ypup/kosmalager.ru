@@ -1,8 +1,20 @@
 class EventsController < ApplicationController
 
-def index
-  @events = Event.all
+def rusdate
 
+  @rusdate = %w[января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря ]
+
+
+
+end
+
+
+def index
+  @events = Event.order(:date)
+  
+
+
+   
   @bckg = "/img/home.jpg"
   @title = "Предстоящие события"
   @label = "Храма свв. бесср. Космы и Дамиана"
@@ -31,6 +43,7 @@ end
 
   def show
     @event = Event.find(params[:id])
+
 
     @bckg = @event.image
 

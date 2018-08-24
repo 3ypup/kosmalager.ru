@@ -81,7 +81,7 @@
 
                         <a href=<%=event_url(event)%>>
                       <h2 class="post-title">
-                            <%=event.date%>
+                            <%=event.date.strftime("%d %b %Yг.")%>
                           </h2>
                         <img class="img-responsive" style="width: 200px" src= <%=event.image%> />
                         <div class="post-preview">                          

@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.text :content
       t.text :title
       t.string :image
-      t.string :date
+      t.datetime :date
 
 
 

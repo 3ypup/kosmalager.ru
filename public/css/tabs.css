@@ -13,7 +13,7 @@
     display:block;
     clear:both;
     height:5px;
-    background:#46c765;
+    background:#5490de;
 }
 .tabs ul li{
     margin:0px;
@@ -26,7 +26,7 @@
     color:#707070;
 }
 .tabs ul li.active, .tabs ul li.active:hover{
-    background:#46c765;
+    background:#5490de;
     color:#fff;
 }
 .tabs ul li:hover{
