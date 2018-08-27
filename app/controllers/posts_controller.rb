@@ -45,6 +45,22 @@ def create
   end
 
 
+  def destroy
+  @post = Post.find(params[:id])
+  
+  #@post.comments.each do |comment|
+  #  comment.destroy
+  #end
+
+
+  @post.destroy
+
+
+  redirect_to posts_path
+
+end
+
+
   def post_params
     params.require(:post).permit(:author, :content, :title, :image)
   end
