@@ -48,8 +48,18 @@ end
 
   end
 
-def public
-      @rusdate = %w[0 января февраля марта апреля мая июня июля августа сентября октября ноября декабря ]
+def destroy
+  @event = Event.find(params[:id])
+  
+  #@post.comments.each do |comment|
+  #  comment.destroy
+  #end
+
+
+  @event.destroy
+
+
+  redirect_to events_path
 
 end
 

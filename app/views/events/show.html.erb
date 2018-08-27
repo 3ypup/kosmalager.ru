@@ -9,6 +9,8 @@
             <%=@event.date. strftime("%d")%>-го <%=$rusdate[@event.date.strftime("%m").to_i]%> <%=@event.date. strftime("%Y")%> г.</
               </h2>
             <p><%=@event.content%></p>
+            
+            <small><%= link_to "Удалить", event_path(@event.id), method: :delete, data: {confirm: "Точно удалить?"} %>  <br/></small>
            
           </div>
         </div>
