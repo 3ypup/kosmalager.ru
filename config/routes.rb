@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
 
 get '/' => "main#index"
+get '/contacts' => "main#contacts"
+
 
 resources :main
 resources :posts
