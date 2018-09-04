@@ -25,7 +25,7 @@ end
 
 
 def new
-
+@post = Post.new
 
 
   @bckg = "/img/home.jpg"

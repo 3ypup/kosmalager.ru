@@ -3,11 +3,25 @@
 <div id="post">
 	<div class="mx-auto" style="width: 500px;">
 		<div class="alert alert-info" role="alert">
-<t4> Написать новый пост: </t4>
+
+
+
 
 <%= form_for :post, url: posts_path do |f| %> 
-
-	
+ <% if @post.errors.any? %>
+            <div id="errorExplanation">
+            	 
+                <ul>
+                    <% @post.errors.full_messages.each do |msg| %>
+				<div class="alert alert-danger">
+                    <li><%= msg %></li>
+               	</div>
+                    <% end %>
+                  </ul>
+             
+            </div>
+  <% end %>
+	<t4> Написать новый пост: </t4>
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 
 	<t2> <%= f.label :Тема_поста %> </t2>

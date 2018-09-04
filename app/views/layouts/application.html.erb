@@ -148,6 +148,8 @@
     <header class="masthead" style="background-image: url('<%=@bckg%>')">
       <div class="overlay"></div>
       <div class="container">
+
+        
           <!--visible-sx button navigation-->
 
           <div class="row">
@@ -243,7 +245,9 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-
+    <%if @error && @error.length > 0 then %>
+    <div class="alert alert-danger"><%=@error%></div>
+    <% end %>
 
     <%= yield %>
 
