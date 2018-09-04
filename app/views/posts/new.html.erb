@@ -2,7 +2,7 @@
 
 <div id="post">
 	<div class="mx-auto" style="width: 500px;">
-		<div class="alert alert-info" role="alert">
+		
 
 
 
@@ -24,7 +24,7 @@
 	<t4> Написать новый пост: </t4>
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 
-	<t2> <%= f.label :Тема_поста %> </t2>
+	<t2> <%= f.label :Тема_поста %> </t2><br/>
 	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
 
 	<t2> <%= f.label :Текст_поста %> </t2>
@@ -34,8 +34,8 @@
 	<t2><%= f.label :Обложка_поста %></t2>
     <p1><%= f.file_field :image %></p1>
 
-	<button class="btn btn-primary" type="submit">Создать</button>
+	<button class="btn btn-primary" type="submit">Создать пост</button>
  <%end%>
-</div>
+
 </div>
 </div>

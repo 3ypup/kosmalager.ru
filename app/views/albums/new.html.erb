@@ -1,5 +1,5 @@
 <div class="mx-auto" style="width: 500px;">
-<p4> Создать новый альбом: </p4>
+
 <%= form_for :album, url: albums_path do |f| %> 
 
  <% if @album.errors.any? %>
@@ -15,6 +15,7 @@
              
             </div>
   <% end %>
+  <p4> Создать новый альбом: </p4>
 
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 	<t2> <%= f.label :Название_альбома %> </t2><br/>
@@ -25,8 +26,8 @@
 
 
 	<t2><%= f.label :Обложка_альбома %></t2>
-    <p1><%= f.file_field :image %></p1>
+    <p1><%= f.file_field :image %></p1><br/>
 
-	<p3> <%= f.submit 'Создать альбом' %></p3>
+	<button class="btn btn-primary" type="submit">Создать альбом</button>
  <%end%>
 </div>
