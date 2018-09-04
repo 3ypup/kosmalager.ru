@@ -17,7 +17,7 @@ end
 
 def new
 
-
+@album = Album.new
 
 @bckg = "/img/home.jpg"
 @title = "Галерея"

@@ -5,6 +5,19 @@
 
 <%= form_for :event, url: events_path do |f| %> 
 
+ <% if @event.errors.any? %>
+            <div id="errorExplanation">
+            	 
+                <ul>
+                    <% @event.errors.messages.each do |msg| %>
+				<div class="alert alert-danger">
+                    <li><%= msg[1][0] %></li>
+               	</div>
+                    <% end %>
+                  </ul>
+             
+            </div>
+  <% end %>
 	
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 

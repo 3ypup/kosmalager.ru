@@ -19,7 +19,7 @@ end
 
 
     def new
-
+      @event = Event.new
       @bckg = "/img/home.jpg"
       @title = "Новое событие"
       @label = ""

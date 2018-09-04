@@ -1,12 +1,12 @@
 class Event < ApplicationRecord
 
-  validates :title, presence: true 
-  validates :title, :length => {:maximum => 20} 
+  validates :title, presence: {:message => "Тема встречи не указана!!"}
+  validates :title, :length => {:maximum => 20, :message => "Слишком длинная тема встречи !!"} 
   validates :author, presence: true
-  validates :content, presence: true
-  validates :content, :length => {:maximum => 2000}
-  validates :date, presence: true
-  validates :image, presence: true
+  validates :content, presence: {:message => "Опишите событие!!"}
+  validates :content, :length => {:maximum => 2000, :message => "Слишком много текста!!"}
+  validates :date, presence: {:message => "Выберите дату!!"}
+  validates :image, presence: {:message => "Выберите обложку встречи!!"}
 
 
 mount_uploader :image, EventimageUploader

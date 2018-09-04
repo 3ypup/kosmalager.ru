@@ -2,6 +2,20 @@
 <p4> Создать новый альбом: </p4>
 <%= form_for :album, url: albums_path do |f| %> 
 
+ <% if @album.errors.any? %>
+            <div id="errorExplanation">
+            	 
+                <ul>
+                    <% @album.errors.messages.each do |msg| %>
+				<div class="alert alert-danger">
+                    <li><%= msg[1][0] %></li>
+               	</div>
+                    <% end %>
+                  </ul>
+             
+            </div>
+  <% end %>
+
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 	<t2> <%= f.label :Название_альбома %> </t2><br/>
 	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>

@@ -12,9 +12,9 @@
             <div id="errorExplanation">
             	 
                 <ul>
-                    <% @post.errors.full_messages.each do |msg| %>
+                    <% @post.errors.messages.each do |msg| %>
 				<div class="alert alert-danger">
-                    <li><%= msg %></li>
+                    <li><%= msg[1][0]%></li>
                	</div>
                     <% end %>
                   </ul>
