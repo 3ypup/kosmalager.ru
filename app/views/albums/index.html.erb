@@ -34,6 +34,11 @@
 
     	<% @albums.reverse_each  do |album|%>
        <div  class="col-md-4 col-sm-4 col-xs-6" >
+
+
+ 
+
+<div class="polaroid">
        	<a href = <%=album_url(album.id)%>>
         <p2> <%=album.title%></p2>|
        	
@@ -41,6 +46,7 @@
         <p2> <%=album.author%></p2>
         <p2> <%=album.created_at%></p2></a>
     	</div> 
+ </div>       
 
 
 

@@ -49,10 +49,13 @@
                             <%pic.images.each do |p|%>
                           
                             <li st class="col-xs-3 col-sm-3 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
+                            <div class="polaroid">
                                 <a href=<%=album_url(
                                    pic.album.id)%>>
                                     <img class="img-responsive" src="<%=p%>">
                                 </a>
+                                <div class="container"></div>
+                              </div>  
                                 <%end%>
                             <%end%>
                             
@@ -106,7 +109,8 @@
 
                       <hr>
                       <%end%>
-                                         <div class="clearfix">
+                              
+                    <div class="clearfix">
                       
                       <a class="btn btn-primary float-right" href=<%=events_url%>>Все события &rarr;</a>
                     </div>

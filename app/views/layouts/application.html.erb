@@ -64,6 +64,13 @@
    <link href="/css/tabs.css" rel="stylesheet">
   
 
+  <!--polaroid pics -->
+
+
+<link href="/css/polaroid.css" rel="stylesheet">
+
+  
+
   </head>
   
 
@@ -245,9 +252,7 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-    <%if @error && @error.length > 0 then %>
-    <div class="alert alert-danger"><%=@error%></div>
-    <% end %>
+
 
     <%= yield %>
 
