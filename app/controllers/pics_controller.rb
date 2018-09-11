@@ -5,9 +5,15 @@ end
 
 def new
 
+@album = Album.find(params[:album_id])
+
+  @bckg = "/img/home.jpg"
+  @title = "Загрузить новые фотографии"
+  @label = ""
 end
 
 def create
+    
 
     @album = Album.find(params[:album_id])
     @album.pics.create(pic_params)

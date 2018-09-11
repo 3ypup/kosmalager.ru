@@ -18,17 +18,30 @@
 
 
 	<%if user_signed_in?%>
-
+        <% if @album.errors.any? %>
+            <div id="errorExplanation">
+                 
+                <ul>
+                    <% @album.errors.messages.each do |msg| %>
+                <div class="alert alert-danger">
+                    <li><%= msg[1][0] %></li>
+                </div>
+                    <% end %>
+                  </ul>
+             
+            </div>
+    <% end %>
 				  <p2><%= form_for ([@album, @album.pics.build]) do |f| %></p2>
-				  <div class="alert alert-info" role="alert">
-				  	<p3>Добавить фотографии</p3></a><br/>
+				 <button  class = "btn btn-outline-primary" >
+        				  	<p3>Добавить фотографии</p3></a><br/>
+                    </button>
+                            <%= f.hidden_field  :pic, value: current_user.username %> </h1>
 
-                    <%= f.hidden_field  :pic, value: current_user.username %> </h1>
-				  <button class = "btn btn-info" ><%= f.file_field :images, multiple: true %></button><br/>
-				
-				   <button class="btn btn-primary" type="submit">Сохранить</button>
+
+        				  <button  class = "btn btn-outline-primary" ><%= f.file_field :images, multiple: true %></button>
+        				   <button class="btn btn-outline-primary" type="submit">Сохранить</button>
 	 			<%end%>
-	 		</div>
+	 		
 		
 	<%end%>
 
@@ -58,7 +71,7 @@
                    
                     <%end%>
                 <%end%>
-           
+
             </ul>
         </div>
 

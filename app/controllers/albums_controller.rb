@@ -32,6 +32,7 @@ def create
 @title = "Галерея"
 @label = "Храма свв. бесср. Космы и Дамиана"
 
+
 @album = Album.new(album_params)
       
       if  @album.save
@@ -43,6 +44,9 @@ def create
 
 
 def show
+
+
+
 @album = Album.find(params[:id])
 
 @bckg = @album.image
