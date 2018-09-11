@@ -1,7 +1,7 @@
 
 <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-12 col-xs-12  col-sm-12 mx-auto">
+        <div class="col-lg-12 col-md-12 col-xs-12  col-sm-12 mx-auto">
             <div class="tabs">
                 
                 <ul>
@@ -50,26 +50,36 @@
 
                     </div>
                      <!-- Вкладка фотографии -->
+                    
                     <div>
                         <div class="gallery">
                         <ul id="lightgallery" class="list-unstyled row">
+                          
+                          
                           <%@album.each do |pic|%>
                             <%pic.images.each do |p|%>
-                          
-                            <li st class="col-xs-3 col-sm-3 col-md-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
+                       
+                            <li st class="col-xs-3" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
                             <div class="polaroid">
                                 <a href=<%=album_url(
                                    pic.album.id)%>>
                                     <img class="img-responsive" src="<%=p%>">
                                 </a>
                                 <div class="container"></div>
-                              </div>  
+                              </div> 
+
+                              </li>
+                              
+
+                          
+                              
+                              
                                 <%end%>
                             <%end%>
                             
                         </ul>
                     </div>
-
+                </div>
                       <div class="clearfix">
                       <%if user_signed_in?%>
                       <a class="btn btn-success float-left" href=<%=new_album_url%>>&larr; Новый альбом </a>
@@ -82,8 +92,8 @@
 
 
 
-                    </div>
-
+                   
+                  </li>
                     <!-- Вкладка события -->
                      <div>
                       <%@events.reverse_each  do |event|%>
@@ -154,6 +164,8 @@
 
 <script>
     $(document).ready(function(){
+
+
   $(".tabs").lightTabs();
 });
 </script>

@@ -21,7 +21,9 @@
 			
 			$(tabs).children("ul").children("li").click(function(){
 				showPage(parseInt($(this).attr("data-page")));
-			});				
+			});	
+
+						
 		};		
 		return this.each(createTabs);
 	};	

@@ -6,7 +6,7 @@ def index
 @posts = Post.all.last(5)
 @events = Event.all.last(5)
 @albums = Album.all.last(5)
-@album = Pic.all.last(15)
+@album = Pic.all.last(10)
 
   @bckg = "/img/home.jpg"
   @title = "Приходской подростковый клуб"
