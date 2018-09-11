@@ -1,6 +1,13 @@
 
 
 <!-- Main Content -->
+
+<div class="clearfix">
+            <%if user_signed_in?%>
+            <a class="btn btn-success pull-right" href=<%=new_event_url%>> Новое событие </a>
+            <%end%>
+           
+          </div>
     <div class="container">
       <div class="row">
         <%@events.each do |event|%>
@@ -47,12 +54,7 @@
           <%end%>
                  
           <!-- Pager -->
-          <div class="clearfix">
-            <%if user_signed_in?%>
-            <a class="btn btn-success" href=<%=new_event_url%>> Новое событие </a>
-            <%end%>
-           
-          </div>
+          
         </div>
       </div>
     </div>
