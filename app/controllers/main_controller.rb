@@ -4,7 +4,7 @@ $rusdate = %w[0 января февраля марта апреля мая ию�
 def index
 
 @posts = Post.all.last(5)
-@events = Event.all.last(5)
+@events = Event.order(:date).last(5)
 @albums = Album.all.last(5)
 @album = Pic.all.last(10)
 

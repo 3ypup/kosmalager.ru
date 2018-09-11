@@ -97,7 +97,7 @@
                     <!-- Вкладка события -->
                 
                      <div>
-                      <%@events.reverse_each  do |event|%>
+                      <%@events.each  do |event|%>
 
                         <a href=<%=event_url(event)%>>
                        <h2 class="event-title">

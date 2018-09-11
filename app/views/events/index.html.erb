@@ -3,30 +3,46 @@
 <!-- Main Content -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <%@events.each do |event|%>
+        <%@events.each do |event|%>
+
+        <div class="col-lg-12 col-md-12">
+          
           <div class="event-preview">
-
-            <a href=<%=event_url(event)%>>
-
-              
-            <h2 class="event-title">
             
-            <%=event.date.strftime("%d")%>-го <%=$rusdate[event.date.strftime("%m").to_i]%> <%=event.date.strftime("%Y")%> г.</
-              </h2>
-              <img class="img-responsive" style="width: 200px" src= <%=event.image%> />
-              <h2 class="event-title">
-                <%=event.title%>
-              </h2>
+            <a href=<%=event_url(event)%>>
+            
+              
+                    <h2 class="event-title">
+                    
+                    <%=event.date.strftime("%d")%>-го <%=$rusdate[event.date.strftime("%m").to_i]%> <%=event.date.strftime("%Y")%> г.</
+                      </h2>
+                        <h2 class="event-title">
+                        <%=event.title%>
+                        <br/><br/>
+                      </h2>
+                   </div> 
 
-              <h3 class="event-subtitle">
-                <%=event.content%>
-              </h3>
+                 </div>
+
+                   <div class="col-lg-8 col-md-8 mx-auto"> 
+
+                      
+                      <img class="img-responsive mx-auto"  src= <%=event.image%> />
+                 
+                    </div>
+
+                     <div class="col-lg-12 col-md-12"> 
+                          
+                            <h3 class="text-left">
+                              <%=event.content%>
+                            </h3>
+                          </a>
+                          <p class="event-meta">Написал
+                            <a href="#"><%=event.author%></a>
+                            <%=event.created_at%></p><hr/>
+                    </div>
+                  </div>
             </a>
-            <p class="event-meta">Написал
-              <a href="#"><%=event.author%></a>
-              <%=event.created_at%></p><hr/>
-          </div>
           <hr>
           <%end%>
                  
