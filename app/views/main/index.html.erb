@@ -59,7 +59,7 @@
                           <%@album.each do |pic|%>
                             <%pic.images.each do |p|%>
                        
-                            <li st class="col-xs-6" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
+                            <li st class="col-lg-3 col-md-3 col-xs-6  col-sm-12" data-responsive="<%=p%>" data-src="<%=p%>" data-sub-html="Комментарий к фотографии">
                             <div class="polaroid">
                                 <a href=<%=album_url(
                                    pic.album.id)%>>
