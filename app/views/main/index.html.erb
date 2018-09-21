@@ -25,7 +25,7 @@
                           <h3 class="post-subtitle">
                             <%=post.content.first(300)%>...<br/>
                             <div class="pull-right">
-                          <button type="button" class="btn btn-outline-primary"> читать далее...</button>
+                          <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
                          </div> 
 
 
@@ -43,9 +43,9 @@
                    
                       <div class="clearfix">
                       <%if user_signed_in?%>
-                      <a class="btn btn-success float-right" href=<%=new_post_url%>>&larr; Новый пост </a>
+                      <a class="btn btn-success float-right" href=<%=new_post_url%>> Новый пост </a>
                       <%end%>
-                      <a class="btn btn-primary float-left" href=<%=posts_url%>>Все посты &rarr;</a>
+                      <a class="btn btn-primary float-left" href=<%=posts_url%>>Все посты </a>
                     </div>
 
                     </div>
@@ -82,9 +82,10 @@
                 
                       <div class="clearfix">
                       <%if user_signed_in?%>
-                      <a class="btn btn-success float-left" href=<%=new_album_url%>>&larr; Новый альбом </a>
+
+                      <a  class="btn btn-success float-right" href=<%=new_album_url%>>Новый альбом </a>
                       <%end%>
-                      <a class="btn btn-primary float-right" href=<%=albums_url%>>Все альбомы &rarr;</a>
+                      <a  class="btn btn-primary float-left" href=<%=albums_url%>>Все альбомы</a>
                     </div>
 
 </div>
@@ -129,7 +130,7 @@
                       </div>        
                     <div class="clearfix">
                       
-                      <a class="btn btn-primary float-right" href=<%=events_url%>>Все события &rarr;</a>
+                      <a class="btn btn-primary float-left" href=<%=events_url%>>Все события</a>
                     </div>
 
 
