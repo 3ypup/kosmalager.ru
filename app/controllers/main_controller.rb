@@ -3,6 +3,7 @@ $rusdate = %w[0 января февраля марта апреля мая ию�
 
 def index
 
+
 @posts = Post.all.last(5)
 @events = Event.order(:date).last(5)
 @albums = Album.all.last(5)
@@ -13,7 +14,15 @@ def index
   @label = "Храма свв. бесср. Космы и Дамиана"
 end
 
+def terminal
 
+@users = User.all
+
+@bckg = "/img/home.jpg"
+@title = "Управление доступом"
+@label = ""
+
+end
 
 
 
