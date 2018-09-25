@@ -24,8 +24,9 @@
                 <%=post.title%>
               </h2>
               <h3 class="post-subtitle">
-                <%=post.content%>
+                <%=post.content.first(300)%>...
               </h3>
+              <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
             </a>
             <p class="post-meta">Написал
               <a href="#"><%=post.author%></a>

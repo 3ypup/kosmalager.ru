@@ -20,7 +20,7 @@ def terminal
 
 @bckg = "/img/home.jpg"
 @title = "Управление доступом"
-@label = ""
+@label = "и другие интересные функции"
 
 end
 
