@@ -14,7 +14,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-10 col-md-10 mx-auto">
           <%@posts.each do |post|%>
           <div class="post-preview">
 
@@ -23,16 +23,18 @@
               <h2 class="post-title">
                 <%=post.title%>
               </h2>
-              <h3 class="post-subtitle">
-                <%=post.content.first(300)%>...
-              </h3>
-              <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
+              
+             <h class="text-left">
+                <%=simple_format(post.content.first(300)+"...")%>
+             </h>
+           
+              <button type="button"  class="btn btn-outline-primary pull-right"> читать далее...</button>
             </a>
-            <p class="post-meta">Написал
+            <p class="post-meta pull-left">Написал
               <a href="#"><%=post.author%></a>
               <%=post.created_at%></p>
           </div>
-          <hr>
+          <hr/><br/>
           <%end%>
                  
           <!-- Pager -->
