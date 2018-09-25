@@ -13,6 +13,8 @@ def index
   @bckg = "/img/home.jpg"
   @title = "Предстоящие события"
   @label = "Храма свв. бесср. Космы и Дамиана"
+  @tab_title = "События"
+
 end
 
 
@@ -45,6 +47,8 @@ end
     @title = @event.title
 
     @label =""
+
+    @tab_title = @event.title
 
   end
 

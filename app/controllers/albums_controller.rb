@@ -11,7 +11,7 @@ def index
 
 
 @albums=Album.all
-
+@tab_title = "Галерея"
 end
 
 
@@ -55,7 +55,7 @@ def show
 
 @label = @album.content
   
-  
+@tab_title = @album.title 
 
 end
 

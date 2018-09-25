@@ -7,7 +7,10 @@ def index
 @posts = Post.all.last(5)
 @events = Event.order(:date).last(5)
 @albums = Album.all.last(5)
+@label = "и другие интересные функции"
 @album = Pic.all.last(10)
+@tab_title = "Главная"
+
 
   @bckg = "/img/home.jpg"
   @title = "Приходской подростковый клуб"

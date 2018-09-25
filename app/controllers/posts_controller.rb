@@ -6,6 +6,7 @@ end
 def index
   @posts = Post.all
 
+  @tab_title = "Посты"
   @bckg = "/img/home.jpg"
   @title = "Блог клуба"
   @label = "Храма свв. бесср. Космы и Дамиана"
@@ -15,6 +16,8 @@ end
 def show
 @post = Post.find(params[:id])
 
+
+@tab_title = @post.title
 @bckg = @post.image
 
 @title = @post.title
@@ -27,7 +30,7 @@ end
 def new
 @post = Post.new
 
-
+  @tab_title = "Новый пост"
   @bckg = "/img/home.jpg"
   @title = "Новый пост"
   @label = ""
