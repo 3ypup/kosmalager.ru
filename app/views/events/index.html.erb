@@ -41,12 +41,20 @@
                      <div class="col-lg-12 col-md-12"> 
                           
                             <h4 class="text-left">
-                              <%=simple_format(event.content)%>
+                              <%=simple_format(event.content.first(600)+"...")%>
                             </h4>
+
+                            <div class="pull-right">
+                          <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
+                         </div> 
+                        </a>
+                        <p class="post-meta pull-left">Написал
+                          <a href="#"><%=event.author%></a>
+                          <%=event.created_at%></p>
+
+
                           </a>
-                          <p class="event-meta">Написал
-                            <a href="#"><%=event.author%></a>
-                            <%=event.created_at%></p><hr/>
+                          <hr/>
                     </div>
                   </div>
             </a>
