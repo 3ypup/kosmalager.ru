@@ -68,3 +68,7 @@ gem 'carrierwave'
 
 gem 'actionmailer'
 
+gem 'ckeditor'
+
+gem 'mini_magick'
+
