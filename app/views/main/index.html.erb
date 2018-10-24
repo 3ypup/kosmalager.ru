@@ -13,26 +13,35 @@
 
                 <div>
                   <!-- Вкладка посты -->
-                    <div>
-                      <%@posts.reverse_each  do |post|%>
-                      <div class="post-preview">
 
-                        <a href=<%=post_url(post)%>>
+                    <div>
+                      <div class="clearfix">
+                      <%if user_signed_in?%>
+                      <a class="btn btn-success float-right" href=<%=new_post_url%>> Новый пост </a>
+                      <%end%>
+                      <a class="btn btn-primary float-left" href=<%=posts_url%>>Все посты </a>
+                    </div>
+                      <%@posts.reverse_each  do |post|%>
+                      <div>
+
+                        
 
                           <h2 class="post-title">
                             <%=post.title%>
+                          <a href=<%=post_url(post)%>>
                           </h2>
                           <h4 class="text-left">
-                            <%=simple_format(post.content.first(600)+"...")%>
-                          </h4>
-                          <br/>
+                            <%=post.content.first(500).html_safe+"..."%></h4><br/>
+                           </a> 
+                          
+
+                          <a href=<%=post_url(post)%>>
                             <div class="pull-right">
                           <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
                          </div> 
-
-
                           </h3>
                         </a>
+                        <br/>
 
 
 
@@ -43,17 +52,20 @@
                       <hr>
                       <%end%>
                    
-                      <div class="clearfix">
-                      <%if user_signed_in?%>
-                      <a class="btn btn-success float-right" href=<%=new_post_url%>> Новый пост </a>
-                      <%end%>
-                      <a class="btn btn-primary float-left" href=<%=posts_url%>>Все посты </a>
-                    </div>
+                      
 
                     </div>
                      <!-- Вкладка фотографии -->
                     
                     <div>
+                                      
+                      <div class="clearfix">
+                      <%if user_signed_in?%>
+
+                      <a  class="btn btn-success float-right" href=<%=new_album_url%>>Новый альбом </a>
+                      <%end%>
+                      <a  class="btn btn-primary float-left" href=<%=albums_url%>>Все альбомы</a>
+                    </div>
                         <div class="gallery">
                         <ul id="lightgallery" class="list-unstyled row">
                           
@@ -81,14 +93,7 @@
                             
                         </ul>
                     </div>
-                
-                      <div class="clearfix">
-                      <%if user_signed_in?%>
 
-                      <a  class="btn btn-success float-right" href=<%=new_album_url%>>Новый альбом </a>
-                      <%end%>
-                      <a  class="btn btn-primary float-left" href=<%=albums_url%>>Все альбомы</a>
-                    </div>
 
 </div>
 
@@ -98,11 +103,17 @@
                    
                  
                     <!-- Вкладка события -->
+
                 
                      <div>
+                                        <div class="clearfix">
+                      
+                      <a class="btn btn-primary float-left" href=<%=events_url%>>Все события</a><hr/>
+                    </div>
                       <%@events.each  do |event|%>
 
-                        <a href=<%=event_url(event)%>>
+
+                        
                        <h2 class="event-title">
             
                          <%=event.date.strftime("%d")%>-го <%=$rusdate[event.date.strftime("%m").to_i]%> <%=event.date. strftime("%Y")%> г.</
@@ -113,10 +124,16 @@
                           <h2 class="post-title">
                             <%=event.title%>
                           </h2>
+                          <a href=<%=event_url(event)%>>
                           <h4 class="text-left">
-                            <%=simple_format(event.content.first(600)+"...")%>
+                            <%=event.content.first(600).html_safe+"..."%>
                           </h4>
+                        </a>
                           <br/>
+                    <div class="pull-right">
+                    </div>
+
+                          <a href=<%=event_url(event)%>>
                             <div class="pull-right">
                           <button type="button"  class="btn btn-outline-primary"> читать далее...</button>
                          </div> 
@@ -125,19 +142,12 @@
                           <a href="#"><%=event.author%></a>
                           <%=event.created_at%></p>
 
-
-                      
-
-
-
-
                       <hr>
                       <%end%>
-                      </div>        
-                    <div class="clearfix">
-                      
-                      <a class="btn btn-primary float-left" href=<%=events_url%>>Все события</a>
-                    </div>
+
+
+                      </div> 
+
 
 
                     </div>
