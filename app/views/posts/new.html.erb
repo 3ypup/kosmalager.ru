@@ -1,4 +1,4 @@
-<script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
+
 
 		
 		
@@ -30,7 +30,7 @@
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 
 	<t2> <%= f.label :Тема_поста %> </t2><br/>
-	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
+	<p1> <%= f.text_field  :title, size: "50x1"  %> </p1><br/>
 
 	<t2><%= f.label :Текст_поста %> </t2><br/>
 	<textarea  name="post[content]" >
@@ -49,6 +49,3 @@
 </div>
 
 
-	<script>
-			CKEDITOR.replace( 'post[content]' );
-	</script>

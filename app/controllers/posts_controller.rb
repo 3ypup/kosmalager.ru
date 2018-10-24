@@ -15,6 +15,7 @@ end
 
 def show
 @post = Post.find(params[:id])
+@content = @post.content
 
 
 @tab_title = @post.title
