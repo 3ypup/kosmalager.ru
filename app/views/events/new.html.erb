@@ -1,5 +1,5 @@
 <div id="event">
-	<div class="mx-auto" style="width: 500px;">
+	<div>
 	
 <t4> Создать событие: </t4>
 
@@ -28,7 +28,9 @@
 	<p1> <%= f.date_field  :date,  size: "40x1"  %> </p1><br/>
 
 	<t2> <%= f.label :Описание_события %> </t2>
-	<p1> <%= f.text_area  :content, size: "70x10" %> </p1><br/>
+	<textarea style="height: 500px;" name="event[content]" >
+	
+	</textarea><br/>
 
 
 	<t2><%= f.label :Обложка_события %></t2>
@@ -39,3 +41,7 @@
 
 </div>
 </div>
+
+  <script>
+      CKEDITOR.replace( 'event[content]');
+  </script>

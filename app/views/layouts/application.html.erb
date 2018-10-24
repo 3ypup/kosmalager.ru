@@ -319,8 +319,13 @@
     <script src="/js/simpleformat.js"></script>  
 
 
-    <!--ckeditor -->
-
   <script>
-      CKEDITOR.replace( 'post[content]' );
-  </script>
+
+   CKEDITOR.editorConfig = function( config )
+{
+   // misc options
+   config.height = '500px';
+};
+
+</script>
+
