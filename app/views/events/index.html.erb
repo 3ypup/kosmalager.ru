@@ -6,9 +6,8 @@
             <%if user_signed_in?%>
             <a class="btn btn-success pull-left" href=<%=new_event_url%>> Новое событие </a>
             <%end%>
-           
           </div>
-    <div class="container">
+<div class="container">
       <div class="row">
         <%@events.each do |event|%>
 
