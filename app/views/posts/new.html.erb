@@ -11,7 +11,9 @@
 
 
 
-<%= form_for :post, url: posts_path do |f| %> 
+<%= form_for :post,  url: posts_path do |f| %> 
+
+
 
  <% if @post.errors.any? %>
             <div id="errorExplanation">
@@ -30,11 +32,10 @@
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 
 	<t2> <%= f.label :Тема_поста %> </t2><br/>
-	<p1> <%= f.text_field  :title, size: "50x1"  %> </p1><br/>
+	<p1> <%= f.text_field  :title, size: "50x1", value: @post.title  %> </p1><br/>
 
 	<t2><%= f.label :Текст_поста %> </t2><br/>
-	<textarea  name="post[content]" >
-	
+	<textarea  name="post[content]"> <%= @post.content%>
 	</textarea>
 	<br/>
 
