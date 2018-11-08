@@ -22,13 +22,16 @@
 	<h1> <%= f.hidden_field  :author, value: current_user.username %> </h1>
 
 	<t2> <%= f.label :Название_события %> </t2><br/>
-	<p1> <%= f.text_area  :title, size: "50x1"  %> </p1><br/>
+	<p1> <%= f.text_area  :title, size: "50x1", value: @event.title  %> </p1><br/>
 
 	<t2> <%= f.label :Дата_встречи %> </t2><br/>
 	<p1> <%= f.date_field  :date,  size: "40x1"  %> </p1><br/>
 
 	<t2> <%= f.label :Описание_события %> </t2>
 	<textarea  name="event[content]" >
+
+		<%= @event.content %>
+		
 	
 	</textarea><br/>
 
